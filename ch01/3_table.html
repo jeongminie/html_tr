@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>table</title>
+	
+	<style type="text/css">
+		table, th, td {
+			border : 1px solid black;
+			border-collapse : collapse;
+		}
+		
+		th, td {
+			padding : 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<table width="100%">
+		<thead>
+			<tr>
+				<th width="30px">번호</th>
+				<th width="50px">이름</th>
+				<th width="70px">아이디</th>
+				<th width="130px">주소</th>
+				<th width="100px">상세주소</th>
+				<th width="100px">모바일</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr>
+				<td>10</td>
+				<td rowspan="2">윤정민</td>
+				<td>jeongminie@naver.com</td>
+				<td>서울 송파구 문정동</td>
+				<td>4525호</td>
+				<td>010-4564-4563</td>
+			</tr>
+			<tr>
+				<td>11</td>
+				<td>jeongminie@naver.com</td>
+				<td>서울 송파구 문정동</td>
+				<td>458호</td>
+				<td>010-9624-5565</td>
+			</tr>	
+		</tbody>
+	</table>
+	
+	<br>
+		
+	<table width="50%" height="100">
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>	
+		<tr>
+			<td></td>
+			<td colspan="2"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	
+	<br>
+	
+	<table width="50%" height="100">
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>	
+		<tr>
+			<td></td>
+			<td rowspan="2"></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+
+</body>
+</html>
