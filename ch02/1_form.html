@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>form</title>
+</head>
+
+<body>
+
+<!-- 	
+	보안 post
+	<form method="post" action="./result.html">
+		input 태그를 form 태그 안에 꼭 넣어야함
+		<input type="text" name="id" id="id" placeholder="아이디">
+		<input type="password" name="password" id="password" placeholder="비밀번호">
+		<input type="submit" value="로그인">
+	</form>
+-->
+
+	<!-- 공유목적 get -->
+	<form action="./result.html" id="form">
+		<!-- input 태그를 form 태그 안에 꼭 넣어야함 -->
+		<input type="text" name="id" id="id" placeholder="아이디" autocomplete="off" required> <!-- required : type submit 사용해야 보임 -->
+		<input type="text" value="못고치지롱" readonly>
+		<input type="text" value="못고치지롱" disabled>
+		<input type="password" name="password" id="password" placeholder="비밀번호">
+		<input type="submit" value="로그인">
+
+		<br><br>
+		<select name="gender" id="">
+			<option value="">선택
+			<option value="man">남자
+			<option value="women">여자
+			<option value="etc">기타
+		</select>
+		
+		<select name="phone" id="">
+			<option value="">통신사
+			<option value="skt">SKT
+			<option value="kt">KT
+			<option value="lg">LG U+
+		</select>
+		
+		<br><br>
+		<h4>취미</h4>
+		<input type="checkbox" name="hobby">등산
+		<input type="checkbox" name="hobby">축구
+		<input type="checkbox" name="hobby">보드게임
+		<input type="checkbox" name="hobby">다꾸
+		<input type="checkbox" name="hobby">맛집투어
+		
+		
+		<br><br>
+		<h4>가입경로</h4>
+		<input type="radio" name="route">신문
+		<input type="radio" name="route">잡지
+		<input type="radio" name="route2">인터넷 검색
+		<input type="radio" name="route2">지인 추천
+		
+		<br><br>
+		<textarea rows="10" cols="50" name="contents" placeholder="posting"></textarea>
+		
+		<input type="hidden" name="" value="">
+		
+		<br><br>
+		<!-- <input type="submit"> -->
+		<input type="button" id="btnSave" value="저장" onclick="create();">
+		
+	</form>
+	
+	<script type="text/javascript">
+		function create() {
+			alert("저장 하시겠습니까?");
+			document.getElementById("form").submit();
+		}
+	</script>
+</body>
+</html>

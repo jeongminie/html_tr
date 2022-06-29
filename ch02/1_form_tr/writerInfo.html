@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>작가정보</title>
+	<style type="text/css">
+		.wrap {
+			width : 1000px;
+		}
+		
+		.checkPoint {
+			padding : 10px;
+		}
+		
+		.Category {
+			background-color : #666666;
+			border-collapse : separate;
+			width : 200px;
+			padding : 10px;
+			color : white;
+		}
+		
+		.infoInput {
+		 	border-bottom : 1px solid #c8c8c8;
+			padding : 10px;
+			
+		}
+		
+		.inputBox {
+			height : 25px;
+        	border: 1px solid #c8c8c8;
+        	margin : 3px;
+		}
+		
+		textarea {
+			border: 1px solid #c8c8c8;
+        	margin : 3px;
+		}
+		
+		.detail {
+			color:#72603c;
+			margin-top : 5px;
+		}
+		
+		.btn {
+			border: 2px solid black;
+			background-color : white;
+			height : 30px;
+			margin : 5px;
+		}
+		
+		#save {
+			width : 100px;
+			height : 30px;
+			border: 2px solid #887652;
+			background-color : #887652;
+			font-weight: bold;
+			color : white;
+			margin : 10px;
+		}
+		
+		#cancel {
+			width : 100px;
+			height : 30px;
+			border: 2px solid #887652;
+			background-color : #887652;
+			font-weight: bold;
+			color : white;
+			margin : 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="checkPoint"><b>○ 작가정보</b></div>
+		<table>
+			<tr>
+				<th class="Category">프로필이미지</th>
+				<td class="infoInput" style="border-top : 1px solid #c8c8c8;">
+					<input type="file">
+				</td>
+			</tr>
+			<tr>
+				<th class="Category">✔ 필명</th>
+				<td class="infoInput">
+					<input type="text" id="nickName" class="inputBox">
+					<br><div class="detail">💬 필명이 없으신 분들은 실명을 등록해 주시기 바랍니다.(작가정보에 노출 될 이름 입니다.)</div>
+				</td>
+			</tr>
+			<tr>
+				<th class="Category">대표작</th>
+				<td class="infoInput">
+					<input type="text" id="piece" class="inputBox" style="width:800px">
+				</td>
+			</tr>
+			<tr>
+				<th class="Category">수상내역</th>
+				<td class="infoInput">
+					<textarea rows="10" style="width:800px"></textarea>
+					<br><div class="detail">💬 여러 수상내역을 등록 시 콤마(,)로 구분하여 등록해 주시기 바랍니다.</div>
+				</td>
+			</tr>
+			<tr>
+				<th class="Category">주요작품</th>
+				<td class="infoInput">
+					<div style="display:flex ">
+						<input type="text" id="storyName" class="inputBox" placeholder="스토리 제목을 입력하세요" style="width:45%">
+						<input type="text" id="storyContent" class="inputBox" placeholder="해당 스토리의 역할을 입력하세요" style="width:45%">
+						<input type="button" value="❌ 삭제" class="btn"><br>
+					</div>
+					<input type="button" value="➕ 추가" class="btn">
+					<br><div class="detail">💬 본인 참여 주요작품의 제목 및 역할에 대해 등록해 주시기 바랍니다.<br>
+					(역할을 메인작가, 공동작가, 보조작가, 각색, 각본 등 본인 역할을 정확히 기재해 주시기 바랍니다.)</div>
+				</td>
+			</tr>
+			<tr>
+				<th class="Category">작가정보공개설정</th>
+				<td class="infoInput">
+					<label>공개<input type="radio" name="disclosure"></label>
+					<label>비공개<input type="radio" name="disclosure"></label>
+				</td>
+			</tr>
+		</table>
+		<div style="display:flex; justify-content:center">
+			<input type="button" value="✔ 저장" id="save">
+			<input type="button" value="취소" id="cancel">
+		</div>	
+	</div>
+</body>
+</html>

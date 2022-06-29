@@ -1,0 +1,80 @@
+	.wrap {
+		width : 1000px;
+	}
+	
+	.checkPoint {
+		display : flex;
+		justify-content: space-between;
+		padding : 10px;
+	}
+	
+	.Category {
+		background-color : #666666;
+		border-collapse : separate;
+		width : 200px;
+		padding : 10px;
+		color : white;
+	}
+	
+	.infoInput {
+	 	border-bottom : 1px solid #c8c8c8;
+		padding : 10px;
+	}
+	
+	.inputBox {
+		height : 25px;
+       	border: 1px solid #c8c8c8;
+       	margin : 3px;
+	}
+	
+	textarea {
+		border: 1px solid #c8c8c8;
+       	margin : 3px;
+	}
+	
+	.detail {
+		color:#72603c;
+		margin-top : 5px;
+	}
+	
+	input[type="date"] {
+
+	  height : 25px;
+	  margin : 3px;
+
+	  border: 1px solid #c8c8c8;
+	}
+	
+	button {
+		border: 2px solid black;
+		background-color : white;
+		height : 30px;
+	}
+	
+	.btn {
+		border: 2px solid black;
+		background-color : white;
+		height : 30px;
+		margin : 5px;
+	}
+	
+	#save {
+		width : 100px;
+		height : 30px;
+		border: 2px solid #887652;
+		background-color : #887652;
+		font-weight: bold;
+		color : white;
+		margin : 10px;
+	}
+	
+	#cancel {
+		width : 100px;
+		height : 30px;
+		border: 2px solid #887652;
+		background-color : #887652;
+		font-weight: bold;
+		color : white;
+		margin : 10px;
+	}
+	
