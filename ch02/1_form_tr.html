@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="style.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<title>기본정보</title>
 </head>
 
@@ -33,7 +34,7 @@
 				<tr>
 					<th class="Category">✔ 비밀번호</th>
 					<td class="infoInput">
-						<input type="text" id="passwordInput" class="inputBox">
+						<input type="password" id="passwordInput" class="inputBox">
 						<br><div class="detail">💬 6~16자까지 영문자(대소문자), 숫자 및 특수문자 사용 가능합니다.
 						<br>3자리 연속 또는 같은 문자, 아이디는 사용하실 수 없습니다.</div>
 					</td>
@@ -41,13 +42,14 @@
 				<tr>
 					<th class="Category">✔ 비밀번호 확인</th>
 					<td class="infoInput">
-						<input type="text" id="passwordCheck" class="inputBox">
+						<input type="password" id="passwordCheck" class="inputBox">
+						<button type="button" id="passwordCheckBtn">비밀번호확인</button>
 					</td>
 				</tr>
 				<tr>
 					<th class="Category">✔ 이메일</th>
 					<td class="infoInput">
-						<input type="text" id="emailInput" class="inputBox"><div>@</div><input type="text" id="domain" class="inputBox">
+						<input type="text" id="emailInput" class="inputBox"><span>@</span><input type="text" id="domain" class="inputBox">
 						<select class="inputBox">
 							<option>메일주소선택</option>
 							<option>naver.com</option>
@@ -228,5 +230,25 @@
 			</div>
 		</form>
 	</div>
+	<script>
+	  $(document).ready(function() {
+		 $("#idCheckBtn").on('click', function(){
+			var userId = $("#idInput").val();
+			
+			if(userId == null || userId == "") {
+				alert("아이디를 입력해주세요.");
+			}
+		 }); 
+		 
+		 $("#passwordCheckBtn").on('click', function(){
+				var password = $("#passwordInput").val().trim();
+				var passwordCheck = $("#passwordCheck").val().trim();
+
+				if(password != passwordCheck) {
+					alert("비밀번호가 일치하지 않습니다.");
+				}
+			 }); 
+	  });
+	</script>
 </body>
 </html>
