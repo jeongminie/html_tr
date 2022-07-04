@@ -1,0 +1,21 @@
+#wrap {
+	width : 1000px;
+	display : flex;
+	justify-content : center;
+}
+
+.container {
+    width:1000px; 
+}
+
+.inputBox {
+	width : 100%;
+	border: 0;
+	height: 30px;
+	 
+}
+
+.inputBox:focus {
+	outline: none;
+}
+

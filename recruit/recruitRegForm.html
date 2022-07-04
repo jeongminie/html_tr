@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  	
+  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+	<link href="css/style.css" rel="stylesheet">
+	<title>입사지원서</title>
+	
+	<style type="text/css">
+		.title {
+			text-align: center;
+		}
+		
+		.category {
+			font-weight : bold;
+		}
+		
+		.item {
+			text-align: center;
+			background-color : #EDEDED;
+		}
+		
+		.table td, .table th {
+			padding: 5px;
+		}
+		
+		.plusBtn {
+			border: 0px;
+			background-color : white;
+			height : 30px;
+			margin : 5px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="container">
+			<h2 class="title p-4">입사지원서</h2>
+			<table class="table table-bordered">
+				<tr>
+					<th class="item" width="100">지원분야</td>
+					<td width="100"><input type="text" id="field" class="inputBox"></td>
+					<th class="item" width="100" >경력구분</td>
+					<td width="100"><input type="text" id="career" class="inputBox"></td>
+					<th class="item" width="100">희망연봉</td>
+					<td width="100"><input type="text" id="salary" class="inputBox"></td>
+				</tr>
+			</table>
+			<br><p class="category">□ 기본정보</p>
+			<table class="table table-bordered">
+				<tr>
+					<td rowspan="6" width="100"></td>
+					<td class="item" width="100">성명</td>
+					<td width="100"><input type="text" id="name" class="inputBox"></td>
+					<td class="item" width="100">한문</td>
+					<td width="100"><input type="text" class="inputBox"></td>					
+				</tr>		
+				<tr>
+					<td class="item">영문</td>
+					<td><input type="text" class="inputBox"></td>
+					<td class="item">생년월일</td>
+					<td><input type="text" id="birth" class="inputBox"></td>					
+				</tr>		
+				<tr>
+					<td class="item">전화번호</td>
+					<td><input type="text" id="phoneNumber" class="inputBox"></td>
+					<td class="item">비상연락망</td>
+					<td><input type="text" class="inputBox"></td>					
+				</tr>		
+				<tr>
+					<td class="item">전자우편</td>
+					<td><input type="text" id="post" class="inputBox"></td>
+					<td class="item">나이</td>
+					<td><input type="text" id="age" class="inputBox"></td>					
+				</tr>		
+				<tr>
+					<td class="item">주소</td>
+					<td colspan="3"><input type="text" id="address" class="inputBox"></td>					
+				</tr>		
+				<tr>
+					<td class="item">취미생활</td>
+					<td colspan="3"><input type="text" id="hobby" class="inputBox"></td>						
+				</tr>				
+			</table>
+			<br><p class="category">□ 학력사항 (최신이력이 가장 위로)</p>
+			<table class="table table-bordered" width="900px">
+				<tr>
+					<td class="item">기간</td>
+					<td class="item">출신학교</td>
+					<td class="item">구분</td>
+					<td class="item">학과</td>
+					<td class="item">소재지</td>
+				</tr>
+				<tr>
+					<td><input type="text" class="inputBox education"></td>
+					<td><input type="text" class="inputBox education"></td>
+					<td><input type="text" class="inputBox education"></td>
+					<td><input type="text" class="inputBox education"></td>
+					<td><input type="text" class="inputBox education"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<br><p class="category">□ 교육연수</p>
+			<table class="table table-bordered">
+				<tr>
+					<td class="item">연수기간</td>
+					<td class="item">연수기관</td>
+					<td class="item">연수과정 및 내용</td>
+				</tr>
+				<tr>
+					<td><input type="text" class="inputBox"></td>
+					<td><input type="text" class="inputBox"></td>
+					<td><input type="text" class="inputBox"></td>
+				</tr>
+			</table>
+			<br><p class="category">□ 자격사항</p>
+			<table class="table table-bordered">
+				<tr>
+					<td class="item">취득일</td>
+					<td class="item">종류 및 등급</td>
+					<td class="item">발행처</td>
+					<td class="item">연수과정 및 내용</td>
+				</tr>
+				<tr>
+					<td><input type="text" class="inputBox"></td>
+					<td><input type="text" class="inputBox"></td>
+					<td><input type="text" class="inputBox"></td>
+					<td><input type="text" class="inputBox"></td>
+				</tr>
+			</table>
+			<br>
+			<div class="d-flex">
+				<p class="category">□ 경력사항(4대 보험 가입 경력)</p>
+				<button type="button" class="btn plusBtn">➕ 추가</button>
+			</div>
+			<table class="table table-bordered">
+				<tr>
+					<td class="item">활동기간</td>
+					<td class="item">기관</td>
+					<td class="item">담당업무</td>
+					<td class="item">경험 및 습득역량</td>
+				</tr>
+				<tr>
+					<td><input type="text" class="inputBox"></td>
+					<td><input type="text" class="inputBox"></td>
+					<td><input type="text" class="inputBox"></td>
+					<td><input type="text" class="inputBox"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<div class="d-flex justify-content-between">
+				<button type="button" class="btn btn-secondary mb-4 mt-2"><a href="recruitList.html" class="text-white">취소</a></button>
+				<button type="button" id="recruiteBtn" class="btn btn-success mb-4 mt-2">지원하기</button>
+			</div>
+		</div>
+	</div>
+	
+	<script>
+		$(document).ready(function(){
+			$("#recruiteBtn").on('click', function(){
+				
+				var field = $("#field").val().trim();
+				
+				if(field == "" || field == null) {
+					alert("지원 분야를 입력해주세요.");
+					return;
+				}
+				
+				var career = $("#career").val().trim();
+				
+				if(career == "" || career == null) {
+					alert("경력 구분을 입력해주세요.");
+					return;
+				}
+				
+				var salary = $("#salary").val().trim();
+				
+				if(salary == "" || salary == null) {
+					alert("희망연봉을 입력해주세요.");
+					return;
+				}
+				
+				var name = $("#name").val().trim();
+				
+				if(name == "" || name == null) {
+					alert("성명을 입력해주세요.");
+					return;
+				}
+				
+				var birth = $("#birth").val().trim();
+				
+				if(birth == "" || birth == null) {
+					alert("생년월일을 입력해주세요.");
+					return;
+				}
+				
+				var phoneNumber = $("#phoneNumber").val().trim();
+				
+				if(phoneNumber == "" || phoneNumber == null) {
+					alert("전화번호를 입력해주세요.");
+					return;
+				}
+				
+				var post = $("#post").val().trim();
+				
+				if(post == "" || post == null) {
+					alert("전자우편을 입력해주세요.");
+					return;
+				}
+				
+				var age = $("#age").val().trim();
+				
+				if(age == "" || age == null) {
+					alert("나이를 입력해주세요.");
+					return;
+				}
+				
+				var address = $("#address").val().trim();
+				
+				if(address == "" || address == null) {
+					alert("주소를 입력해주세요.");
+					return;
+				}
+				
+				var hobby = $("#hobby").val().trim();
+				
+				if(hobby == "" || hobby == null) {
+					alert("취미를 입력해주세요.");
+					return;
+				}
+				
+				alert("지원이 완료 되었습니다.");
+				location.href = "recruitList.html";
+			});
+		});
+	</script>
+</body>
+</html>
