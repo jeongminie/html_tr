@@ -31,7 +31,7 @@
 			padding: 5px;
 		}
 		
-		.plusBtn {
+		.plusBtn, .minusBtn {
 			border: 0px;
 			background-color : white;
 			height : 30px;
@@ -93,9 +93,12 @@
 			<br>
 			<div class="d-flex justify-content-between">
 				<p class="category">□ 학력사항 (최신이력이 가장 위로)</p>
-				<button type="button" class="btn plusBtn">➕ 추가</button>
+				<div class="d-flex">
+					<button type="button" id="addEduBtn" class="btn plusBtn">추가</button>
+					<button type="button" id="deleteEduBtn" class="btn minusBtn">삭제</button>
+				</div>
 			</div>
-			<table class="table table-bordered" width="900px">
+			<table id="educationTable" class="table table-bordered" width="900px">
 				<tr>
 					<td class="item">기간</td>
 					<td class="item">출신학교</td>
@@ -110,26 +113,22 @@
 					<td><input type="text" class="inputBox education"></td>
 					<td><input type="text" class="inputBox education"></td>
 				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
 			</table>
 			<br>
 			<div class="d-flex justify-content-between">
 				<p class="category">□ 교육연수</p>
-				<button type="button" class="btn plusBtn">➕ 추가</button>
+				<div class="d-flex ">
+					<button type="button" id="addTrainingBtn" class="btn plusBtn">추가</button>
+					<button type="button" id="deleteTrainingBtn" class="btn minusBtn">삭제</button>
+				</div>
 			</div>
-			<table class="table table-bordered">
+			<table id="trainingTable" class="table table-bordered">
 				<tr>
 					<td class="item">연수기간</td>
 					<td class="item">연수기관</td>
 					<td class="item">연수과정 및 내용</td>
 				</tr>
-				<tr class="addBox">
+				<tr>
 					<td><input type="text" class="inputBox"></td>
 					<td><input type="text" class="inputBox"></td>
 					<td><input type="text" class="inputBox"></td>
@@ -138,9 +137,12 @@
 			<br>
 			<div class="d-flex justify-content-between">
 				<p class="category">□ 자격사항</p>
-				<button type="button" class="btn plusBtn">➕ 추가</button>
+				<div class="d-flex ">
+					<button type="button" id="addCertificateBtn"class="btn plusBtn">추가</button>
+					<button type="button" id="deleteCertificateBtn" class="btn minusBtn">삭제</button>
+				</div>
 			</div>
-			<table class="table table-bordered">
+			<table id="certificateTable" class="table table-bordered addRow">
 				<tr>
 					<td class="item">취득일</td>
 					<td class="item">종류 및 등급</td>
@@ -157,9 +159,12 @@
 			<br>
 			<div class="d-flex justify-content-between">
 				<p class="category">□ 경력사항(4대 보험 가입 경력)</p>
-				<button type="button" class="btn plusBtn">➕ 추가</button>
+				<div class="d-flex ">
+					<button type="button" id="addCareerBtn" class="btn plusBtn">추가</button>
+					<button type="button" id="deleteCareerBtn" class="btn minusBtn">삭제</button>
+				</div>
 			</div>
-			<table class="table table-bordered">
+			<table id="careerTable" class="table table-bordered addRow">
 				<tr>
 					<td class="item">활동기간</td>
 					<td class="item">기관</td>
@@ -172,18 +177,6 @@
 					<td><input type="text" class="inputBox"></td>
 					<td><input type="text" class="inputBox"></td>
 				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
 			</table>
 			<div class="d-flex justify-content-between">
 				<button type="button" class="btn btn-secondary mb-4 mt-2"><a href="recruitList.html" class="text-white">취소</a></button>
@@ -194,11 +187,57 @@
 	
 	<script>
 		$(document).ready(function(){
-			var i = 1;
-			
-			$(".plusBtn").on('click', function(){
-				$('.addBox').append('<tr><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td></tr>');
+			/* 학력사항 */
+			$("#addEduBtn").on('click', function(){
+				$("#educationTable").append('<tr><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td></tr>');
 			});
+			$("#deleteEduBtn").on('click', function(){
+				 $('#educationTable > tbody > tr:last').remove();
+			});
+			
+			/* 교육연수 */
+			$("#addTrainingBtn").on('click', function(){
+				$("#trainingTable").append('<tr><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td></tr>');
+			});
+			$("#deleteTrainingBtn").on('click', function(){
+				 $('#trainingTable > tbody > tr:last').remove();
+			});
+			
+			/* 자격사항 */
+			$("#addCertificateBtn").on('click', function(){
+				$("#certificateTable").append('<tr><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td></tr>');
+			});
+			$("#deleteCertificateBtn").on('click', function(){
+				 $('#certificateTable > tbody > tr:last').remove();
+			});
+			
+			/* 경력사항 */
+			$("#addCareerBtn").on('click', function(){
+				$("#careerTable").append('<tr><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td></tr>');
+				
+				const table = document.getElementById('careerTable');
+				const tableRow = table.rows.length;
+				
+				if(tableRow-1 >= 5) {
+					alert("최대 5개까지 등록 가능합니다.");
+					document.getElementById("addCareerBtn").disabled = true;
+				}
+			});
+
+			$("#deleteCareerBtn").on('click', function(){
+				 $('#careerTable > tbody > tr:last').remove();
+				 
+				const table = document.getElementById('careerTable');
+				const tableRow = table.rows.length;
+				
+				if(tableRow-1 < 2) {
+					document.getElementById("deleteCareerBtn").disabled = true;
+				} else {
+					document.getElementById("addCareerBtn").disabled = false;
+				}
+			});
+			
+			
 			
 			$("#recruiteBtn").on('click', function(){
 				
