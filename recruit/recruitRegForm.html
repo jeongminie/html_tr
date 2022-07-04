@@ -90,7 +90,11 @@
 					<td colspan="3"><input type="text" id="hobby" class="inputBox"></td>						
 				</tr>				
 			</table>
-			<br><p class="category">□ 학력사항 (최신이력이 가장 위로)</p>
+			<br>
+			<div class="d-flex justify-content-between">
+				<p class="category">□ 학력사항 (최신이력이 가장 위로)</p>
+				<button type="button" class="btn plusBtn">➕ 추가</button>
+			</div>
 			<table class="table table-bordered" width="900px">
 				<tr>
 					<td class="item">기간</td>
@@ -114,20 +118,28 @@
 					<td></td>
 				</tr>
 			</table>
-			<br><p class="category">□ 교육연수</p>
+			<br>
+			<div class="d-flex justify-content-between">
+				<p class="category">□ 교육연수</p>
+				<button type="button" class="btn plusBtn">➕ 추가</button>
+			</div>
 			<table class="table table-bordered">
 				<tr>
 					<td class="item">연수기간</td>
 					<td class="item">연수기관</td>
 					<td class="item">연수과정 및 내용</td>
 				</tr>
-				<tr>
+				<tr class="addBox">
 					<td><input type="text" class="inputBox"></td>
 					<td><input type="text" class="inputBox"></td>
 					<td><input type="text" class="inputBox"></td>
 				</tr>
 			</table>
-			<br><p class="category">□ 자격사항</p>
+			<br>
+			<div class="d-flex justify-content-between">
+				<p class="category">□ 자격사항</p>
+				<button type="button" class="btn plusBtn">➕ 추가</button>
+			</div>
 			<table class="table table-bordered">
 				<tr>
 					<td class="item">취득일</td>
@@ -143,7 +155,7 @@
 				</tr>
 			</table>
 			<br>
-			<div class="d-flex">
+			<div class="d-flex justify-content-between">
 				<p class="category">□ 경력사항(4대 보험 가입 경력)</p>
 				<button type="button" class="btn plusBtn">➕ 추가</button>
 			</div>
@@ -182,6 +194,12 @@
 	
 	<script>
 		$(document).ready(function(){
+			var i = 1;
+			
+			$(".plusBtn").on('click', function(){
+				$('.addBox').append('<tr><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td></tr>');
+			});
+			
 			$("#recruiteBtn").on('click', function(){
 				
 				var field = $("#field").val().trim();
