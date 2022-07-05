@@ -11,20 +11,34 @@
   	
   	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 	<link href="css/style.css" rel="stylesheet">
+	
 	<title>입사지원서</title>
 	
 	<style type="text/css">
+		@font-face {
+		font-family: "hanna";
+		src: url("./font/BMHANNAPro.ttf");
+		}
+		
+		button {
+			background-color: #2DD4CE;
+			font-family: "hanna";
+		}
+		
 		.title {
+			font-family: "hanna";
 			text-align: center;
 		}
 		
 		.category {
+			font-family: "hanna";
 			font-weight : bold;
 		}
 		
 		.item {
+			font-family: "hanna";	
 			text-align: center;
-			background-color : #EDEDED;
+			background-color : #2DD4CE;
 		}
 		
 		.table td, .table th {
@@ -43,7 +57,7 @@
 <body>
 	<div class="wrap">
 		<div class="container">
-			<h2 class="title p-4">입사지원서</h2>
+			<h2 class="title p-4">인재영입</h2>
 			<table class="table table-bordered">
 				<tr>
 					<th class="item" width="100">지원분야</td>
@@ -57,7 +71,12 @@
 			<br><p class="category">□ 기본정보</p>
 			<table class="table table-bordered">
 				<tr>
-					<td rowspan="6" width="100"></td>
+					<td class="category" rowspan="6" width="100">
+						<input type="file" accept="image/*" id="fileInput" class="col-10 mb-2 d-none">
+						<div class="d-flex justify-content-center align-items-center" style="height: 245px">
+							<a href="#" id="imageUploadBtn" "><i class="bi bi-card-image mr-2 text-dark"></i><span class="text-dark">파일 첨부하기</span></a>
+						</div>
+					</td>
 					<td class="item" width="100">성명</td>
 					<td width="100"><input type="text" id="name" class="inputBox"></td>
 					<td class="item" width="100">한문</td>
@@ -67,7 +86,7 @@
 					<td class="item">영문</td>
 					<td><input type="text" class="inputBox"></td>
 					<td class="item">생년월일</td>
-					<td><input type="text" id="birth" class="inputBox"></td>					
+					<td><input type="date" id="birth" class="inputBox"></td>					
 				</tr>		
 				<tr>
 					<td class="item">전화번호</td>
@@ -95,7 +114,7 @@
 				<p class="category">□ 학력사항 (최신이력이 가장 위로)</p>
 				<div class="d-flex">
 					<button type="button" id="addEduBtn" class="btn plusBtn">추가</button>
-					<button type="button" id="deleteEduBtn" class="btn minusBtn">삭제</button>
+					<button type="button" id="deleteEduBtn" class="btn minusBtn" disabled>삭제</button>
 				</div>
 			</div>
 			<table id="educationTable" class="table table-bordered" width="900px">
@@ -119,7 +138,7 @@
 				<p class="category">□ 교육연수</p>
 				<div class="d-flex ">
 					<button type="button" id="addTrainingBtn" class="btn plusBtn">추가</button>
-					<button type="button" id="deleteTrainingBtn" class="btn minusBtn">삭제</button>
+					<button type="button" id="deleteTrainingBtn" class="btn minusBtn" disabled>삭제</button>
 				</div>
 			</div>
 			<table id="trainingTable" class="table table-bordered">
@@ -139,7 +158,7 @@
 				<p class="category">□ 자격사항</p>
 				<div class="d-flex ">
 					<button type="button" id="addCertificateBtn"class="btn plusBtn">추가</button>
-					<button type="button" id="deleteCertificateBtn" class="btn minusBtn">삭제</button>
+					<button type="button" id="deleteCertificateBtn" class="btn minusBtn" disabled>삭제</button>
 				</div>
 			</div>
 			<table id="certificateTable" class="table table-bordered addRow">
@@ -161,7 +180,7 @@
 				<p class="category">□ 경력사항(4대 보험 가입 경력)</p>
 				<div class="d-flex ">
 					<button type="button" id="addCareerBtn" class="btn plusBtn">추가</button>
-					<button type="button" id="deleteCareerBtn" class="btn minusBtn">삭제</button>
+					<button type="button" id="deleteCareerBtn" class="btn minusBtn" disabled>삭제</button>
 				</div>
 			</div>
 			<table id="careerTable" class="table table-bordered addRow">
@@ -179,58 +198,122 @@
 				</tr>
 			</table>
 			<div class="d-flex justify-content-between">
-				<button type="button" class="btn btn-secondary mb-4 mt-2"><a href="recruitList.html" class="text-white">취소</a></button>
-				<button type="button" id="recruiteBtn" class="btn btn-success mb-4 mt-2">지원하기</button>
+				<button type="button" class="btn mb-4 mt-2"><a href="recruitList.html" class="text-white">취소</a></button>
+				<button type="button" id="recruiteBtn" class="btn mb-4 mt-2 text-white">지원하기</button>
 			</div>
 		</div>
 	</div>
 	
 	<script>
 		$(document).ready(function(){
+			var table = null;
+			var tableRow = null;
+		
+			$("#imageUploadBtn").on("click", function(){
+				$("#fileInput").click();
+			});
+			
 			/* 학력사항 */
 			$("#addEduBtn").on('click', function(){
 				$("#educationTable").append('<tr><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td></tr>');
+				document.getElementById("deleteEduBtn").disabled = false;
+				
+				table = document.getElementById('educationTable');
+				tableRow = table.rows.length;
+				console.log(tableRow);
+				
+				if(tableRow-1 >= 5) {
+					alert("최대 5개까지 등록 가능합니다.");
+					document.getElementById("addEduBtn").disabled = true;
+				}
 			});
 			$("#deleteEduBtn").on('click', function(){
-				 $('#educationTable > tbody > tr:last').remove();
+				$('#educationTable > tbody > tr:last').remove();
+				 
+				table = document.getElementById('educationTable');
+				tableRow = table.rows.length;
+				console.log(tableRow)
+				if(tableRow-1 < 2 || tableRow-1 == 1) {
+					document.getElementById("deleteEduBtn").disabled = true;
+				} else {
+					document.getElementById("addEduBtn").disabled = false;
+				}
 			});
 			
 			/* 교육연수 */
 			$("#addTrainingBtn").on('click', function(){
 				$("#trainingTable").append('<tr><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td></tr>');
+				document.getElementById("deleteTrainingBtn").disabled = false;
+				
+				table = document.getElementById('trainingTable');
+				tableRow = table.rows.length;
+				
+				if(tableRow-1 >= 5) {
+					alert("최대 5개까지 등록 가능합니다.");
+					document.getElementById("addTrainingBtn").disabled = true;
+				}
 			});
 			$("#deleteTrainingBtn").on('click', function(){
-				 $('#trainingTable > tbody > tr:last').remove();
+				$('#trainingTable > tbody > tr:last').remove();
+				 
+				table = document.getElementById('trainingTable');
+				tableRow = table.rows.length;
+				
+				if(tableRow-1 < 2 || tableRow-1 == 1) {
+					document.getElementById("deleteTrainingBtn").disabled = true;
+				} else {
+					document.getElementById("addTrainingBtn").disabled = false;
+				}
+					
 			});
 			
 			/* 자격사항 */
 			$("#addCertificateBtn").on('click', function(){
 				$("#certificateTable").append('<tr><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td></tr>');
+				document.getElementById("deleteCertificateBtn").disabled = false;
+				
+				table = document.getElementById('certificateTable');
+				tableRow = table.rows.length;
+				
+				if(tableRow-1 >= 5) {
+					alert("최대 5개까지 등록 가능합니다.");
+					document.getElementById("addCertificateBtn").disabled = true;
+				} 
 			});
 			$("#deleteCertificateBtn").on('click', function(){
-				 $('#certificateTable > tbody > tr:last').remove();
+				$('#certificateTable > tbody > tr:last').remove();
+				 
+				table = document.getElementById('certificateTable');
+				tableRow = table.rows.length;
+					
+				if(tableRow-1 < 2 || tableRow-1 == 1) {
+						document.getElementById("deleteCertificateBtn").disabled = true;
+				} else {
+					document.getElementById("addCertificateBtn").disabled = false;
+				}
+				 
 			});
 			
 			/* 경력사항 */
 			$("#addCareerBtn").on('click', function(){
 				$("#careerTable").append('<tr><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td><td><input type="text" class="inputBox"></td></tr>');
+				document.getElementById("deleteCareerBtn").disabled = false;
 				
-				const table = document.getElementById('careerTable');
-				const tableRow = table.rows.length;
+				table = document.getElementById('careerTable');
+				tableRow = table.rows.length;
 				
 				if(tableRow-1 >= 5) {
 					alert("최대 5개까지 등록 가능합니다.");
 					document.getElementById("addCareerBtn").disabled = true;
-				}
+				} 
 			});
-
 			$("#deleteCareerBtn").on('click', function(){
-				 $('#careerTable > tbody > tr:last').remove();
+				$('#careerTable > tbody > tr:last').remove();
 				 
-				const table = document.getElementById('careerTable');
-				const tableRow = table.rows.length;
+				table = document.getElementById('careerTable');
+				tableRow = table.rows.length;
 				
-				if(tableRow-1 < 2) {
+				if(tableRow-1 < 2 || tableRow-1 == 1) {
 					document.getElementById("deleteCareerBtn").disabled = true;
 				} else {
 					document.getElementById("addCareerBtn").disabled = false;
@@ -238,9 +321,7 @@
 			});
 			
 			
-			
 			$("#recruiteBtn").on('click', function(){
-				
 				var field = $("#field").val().trim();
 				
 				if(field == "" || field == null) {
