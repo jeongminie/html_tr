@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	
+	<style>
+		/* div에 먹히는게 아니라 안에 content(안녕하세요)에 300*150이 먹힘 */ 
+		#aaa {
+			box-sizing: content-box;
+			background-color: red;
+			width: 300px;
+			height : 150px;
+			margin: 10px;
+			padding: 30px;
+			border: 1px solid black;
+		}
+		
+		/* div 자체에 300*150 */
+		#bbb {
+			box-sizing: border-box;
+			background-color: blue;
+			width: 300px;
+			height : 150px;
+			margin: 10px;
+			padding: 30px;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="aaa">안녕하세용</div>
+	<div id="bbb">안녕하세용</div>
+	
+	
+</body>
+</html>

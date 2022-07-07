@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	
+	<style>
+		#wrap {
+			width : 100%;
+			
+		}
+	
+		header {
+			background-color: white;
+			height : 40px;
+			display: flex;
+			align-items: center;
+    		justify-content: space-between;	
+    		padding: 5px;
+		}
+		
+		#logo {
+			display: flex; 
+		
+		}
+		
+		#logoImage {
+			width : 50px;
+		}
+		
+		#title {
+			display: flex;
+			align-items: center;
+		}
+		
+		#searchBox {
+			border: 1px solid #EBEBEB;
+			border-radius: 3px;
+			height: 30px;
+			width : 400px;
+		}
+		
+		#searchBtn {
+			border: 1px solid #EBEBEB;
+			border-radius: 3px;
+			height: 35px;
+			width: 100px;
+		}
+		
+		#loginBtn {
+			color : #07AAD7;
+			border: 1px solid #07AAD7;
+			background-color : white;
+			height: 35px;
+			width: 100px;
+		}
+		
+		
+		#gnbDiv {
+			width : 100%;
+			height : 40px;
+			border-top: 1px solid #EBEBEB;
+			border-bottom: 1px solid #EBEBEB;
+			float: right;
+		}
+		
+		#gnb {
+			display: flex;
+    		justify-content: center;
+    		
+		}
+		
+		.navBtn {
+			border: 1px solid #C6C7C8;
+			border-radius: 13px;
+			height: 30px;
+			margin: 8px;
+		}
+		
+		
+		section {
+			clear : both;
+			display: flex;	
+			
+		}
+		
+		.category {
+			width : 15%;
+			float: left;
+		}
+		
+		ul{
+			padding:0px;
+			margin:0px;
+			list-style:none
+		}
+		
+		li {
+			padding: 10px;
+		}
+		
+		li:hover {
+			background-color: #F1F2F2;
+		}
+		
+		a {
+			text-decoration: none;
+			color : black;
+		}
+
+		.content {
+			width : 80%;
+		}
+		
+		.ad {
+			width : 10%;
+		}
+	
+		h2 {
+			padding-left: 20px;
+		}
+		
+		table {
+			border-spacing:10px;
+		}
+		
+		footer {
+			height: 30px;
+			text-align: center;
+		}
+		
+		hr {
+			border : 0.5px solid #EBEBEB;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="wrap">
+		<header>
+			<div id="logo">
+				<img src="https://cdn-icons.flaticon.com/png/512/3128/premium/3128307.png?token=exp=1657153544~hmac=66221212fa39d94bcb8e07af9db27932" id="logoImage">
+				<span id="title">YouTube</span>
+			</div>
+			<div>
+				<input type="text" id="searchBox" placeholder="검색">
+				<button id="searchBtn">검색</button>
+			</div>
+			<div>
+				<button id="loginBtn">로그인</button>
+			</div>
+		</header>
+		<div id="gnbDiv">
+			<nav id="gnb">
+				<button class="navBtn">전체</button>
+				<button class="navBtn">음악</button>
+				<button class="navBtn">실시간</button>
+				<button class="navBtn">게임</button>
+				<button class="navBtn">축구</button>
+				<button class="navBtn">요리</button>
+				<button class="navBtn">수학</button>
+				<button class="navBtn">랩</button>
+				<button class="navBtn">최근에 업로드 된 동영상</button>
+			</nav>
+		</div>
+		<section>
+		<nav class="category">
+			<ul>
+				<li><a href="#">홈</a></li>
+				<li><a href="#">탐색</a></li>
+				<li><a href="#">Shorts</a></li>
+				<li><a href="#">구독</a></li>
+				<hr>
+				<li><a href="#">보관함</a></li>
+				<li><a href="#">시청기록</a></li>
+				<hr>
+				<span style="padding: 10px;">인기 YOUTUBE</span>
+				<li><a href="#">음악</a></li>
+				<li><a href="#">스포츠</a></li>
+				<li><a href="#">게임</a></li>
+				<li><a href="#">영화</a></li>
+				<li><a href="#">뉴스</a></li>
+			</ul>
+		</nav>
+		<div class="content">
+			<h2>회원관리</h2>
+			<table>
+				<tr>
+					<th width="50px">no</th>
+					<th>관리자여부</th>
+					<th>이름</th>
+					<th>아이디</th>
+					<th>이메일</th>
+					<th>핸드폰</th>
+					<th>마지막 로그인</th>
+					<th>회원가입일</th>
+					<th>최근수정일</th>
+					<th>탈퇴여부</th>
+				</tr>				
+			</table>
+		</div>
+		<div class="ad">
+			광고
+		</div>
+		</section>
+		<footer>
+			<small>
+				© 2022 Google LLC CEO: 선다 피차이 주소: 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.
+			</small>
+		</footer>
+	</div>
+</body>
+</html>
