@@ -15,27 +15,32 @@
 	
 	<style type="text/css">
 		@font-face {
-		font-family: "hanna";
-		src: url("./font/BMHANNAPro.ttf");
+		font-family: "dohyeon";
+		src: url("./font/BMDOHYEON_ttf.ttf");
+		}
+		
+		@font-face {
+		font-family: "jua";
+		src: url("./font/BMJUA_ttf.ttf");
 		}
 		
 		button {
 			background-color: #2DD4CE;
-			font-family: "hanna";
+			font-family: "dohyeon";
 		}
 		
 		.title {
-			font-family: "hanna";
+			font-family: "dohyeon";
 			text-align: center;
 		}
 		
 		.category {
-			font-family: "hanna";
+			font-family: "dohyeon";
 			font-weight : bold;
 		}
 		
 		.item {
-			font-family: "hanna";	
+			font-family: "dohyeon";	
 			text-align: center;
 			background-color : #2DD4CE;
 		}
@@ -49,6 +54,11 @@
 			background-color : white;
 			height : 30px;
 			margin : 5px;
+		}
+		
+		#profile {
+			width : 190px;
+			height : 240px;
 		}
 	</style>
 </head>
@@ -70,11 +80,11 @@
 			<br><p class="category">□ 기본정보</p>
 			<table class="table table-bordered">
 				<tr>
-					<td rowspan="6" width="100"></td>
-					<td class="item" width="100">성명</td>
-					<td width="100"><input type="text" id="name" class="inputBox" value="윤정민"></td>
+					<td rowspan="6" width="100"><img id="profile" src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/002/61/143/261143_20210325180240_500.jpg?61e575e8653e5920470a38d1482d7312/melon/optimize/90"></td>
+					<td class="item" width="200">성명</td>
+					<td width="200"><input type="text" id="name" class="inputBox" value="윤정민"></td>
 					<td class="item" width="100">한문</td>
-					<td width="100"><input type="text" class="inputBox"></td>					
+					<td width="200"><input type="text" class="inputBox"></td>					
 				</tr>		
 				<tr>
 					<td class="item">영문</td>

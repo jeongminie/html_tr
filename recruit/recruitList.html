@@ -22,14 +22,19 @@
 			margin-left: auto;
 		}
 		
-		.applicationDetail:hover {
+		.applicationList:hover {
 			background : #2DD4CE;
 			opacity : 0.5;
 		}
 		
 		@font-face {
-		font-family: "hanna";
-		src: url("./font/BMHANNAPro.ttf");
+		font-family: "kirang";
+		src: url("./font/BMKIRANGHAERANG-TTF.ttf");
+		}
+		
+		@font-face {
+		font-family: "dohyeon";
+		src: url("./font/BMDOHYEON_ttf.ttf");
 		}
 		
 		@font-face {
@@ -37,13 +42,17 @@
 		src: url("./font/BMJUA_ttf.ttf");
 		}
 		
-		h2 {
-			font-family: "hanna";
+		#logo {
+			font-family: "kirang";
+		}
+		
+		h3 {
+			font-family: "dohyeon";
 		}
 		
 		button {
 			background-color: #2DD4CE;
-			font-family: "hanna";
+			font-family: "dohyeon";
 		}
 		
 		.container {
@@ -53,44 +62,54 @@
 		select {
 			border : 0px;
 		}
+		
+		.recruitTable {
+			width : 1000px;
+		}
 	</style>
 </head>
 
 <body>
 	<header class="d-flex justify-content-between p-2">
-		<h2 class="text-center pt-3">입사지원 목록</h2>
-		<button type="button" id="recruitBtn" class="btn h-50 recruitBtn mt-3 text-white">지원하기</button>
+		<div class="d-flex">
+			<h3 id="logo" class="pt-3 mr-2">우아한형제들</h3>
+			<h3 class="text-center pt-3">입사지원 목록</h3>
+		</div>
+		<div class="d-flex">
+			<button type="button" id="searchBtn" class="btn h-50 mt-3 mr-2 text-white">검색</button>
+			<button type="button" id="recruitBtn" class="btn h-50 recruitBtn mt-3 text-white">지원하기</button>
+		</div>
 	</header>
 	
 	<section class="container">
 		<table class="table recruitTable">
 			<tr>
-				<th>No.</th>
-				<th>이름</th>
-				<th>생년월일</th>
-				<th>
+				<th width="50px">No.</th>
+				<th width="80px">이름</th>
+				<th width="100px">생년월일</th>
+				<th width="100px">
 					<label id="sexFilter">
 						<select class="form-select form-select-sm" aria-label=".form-select-sm example" >
 							<option selected>성별</option>
-							<option value="man">남</option>
-							<option value="women">여</option>
+							<option value="man">남성</option>
+							<option value="woman">여성</option>
 						</select>
 					</label>
 				</th>
-				<th>지원분야</th>
-				<th>이메일</th>
-				<th>이력서</th>
+				<th width="100px">지원분야</th>
+				<th width="150px">이메일</th>
+				<th width="150px">이력서</th>
 			</tr>
-			<tr class="applicationDetail">
+			<tr class="applicationList">
 				<td>1</td>
 				<td>윤정민</td>
 				<td>971007</td>
-				<td value="women">여</td>
+				<td value="woman">여</td>
 				<td>백앤드</td>
 				<td>jeongminiee@naver.com</td>
 				<td>신입개발자 윤정민 입니다</td>
 			</tr>
-			<tr class="applicationDetail">
+			<tr class="applicationList">
 				<td>2</td>
 				<td>송강</td>
 				<td>950528</td>
@@ -99,7 +118,7 @@
 				<td>jonjal@naver.com</td>
 				<td>컨설팅부 지원자 송강입니다</td>
 			</tr>
-			<tr class="applicationDetail">
+			<tr class="applicationList">
 				<td>3</td>
 				<td>한소희</td>
 				<td>961002</td>
@@ -108,7 +127,7 @@
 				<td>jeongminiee@naver.com</td>
 				<td>지원자 한소희 입니다</td>
 			</tr>
-			<tr class="applicationDetail">
+			<tr class="applicationList">
 				<td>4</td>
 				<td>남주혁</td>
 				<td>900503</td>
@@ -132,35 +151,32 @@
 				location.href = 'recruitRegForm.html';
 			});
 			
-			$(".applicationDetail").on('click',function(){
+			$(".applicationList").on('click',function(){
 				location.href = 'recruitView.html';
 			});
-/* 			
-			$("#sexFilter").on('click', function(){
+ 			
+			$("#searchBtn").on('click', function(){
 				var sex = $("#sexFilter option:selected").val();
-				var table = document.getElementsByClassName('applicationDetail');
+				var table = document.getElementsByClassName('applicationList');
 				console.log(table);
 
-				if(sex == '성별') {
-					
-					
-				} else if(sex == "women") {
+				if(sex == "woman") {
 					for(var i = 0; i < table.length; i++) {
 						table[i].innerHTML = "";						
 					}
-					table[1].innerHTML = "<tr class='applicationDetail'><td>1</td><td>윤정민</td><td>971007</td><td value='women'>여</td><td>백앤드</td><td>jeongminiee@naver.com</td><td>신입개발자 윤정민 입니다</td></tr>";
-					table[2].innerHTML = "<tr class='applicationDetail'><td>2</td><td>한소희</td><td>971007</td><td value='women'>여</td><td>프론트앤드</td><td>wngur@naver.com</td><td>지원자 한소희 입니다</td></tr>";
+					table[0].innerHTML = '<tr class="applicationList"><td>1</td><td>윤정민</td><td>971007</td><td value="woman">여</td><td>백앤드</td><td>jeongminiee@naver.com</td><td>신입 윤정민 입니다</td></tr>';
+					table[1].innerHTML = '<tr class="applicationList"><td>2</td><td>한소희</td><td>961002</td><td value="woman">여</td><td>프론트앤드</td><td>wngur@naver.com</td><td>지원자 한소희 입니다</td></tr>';
+				} else if(sex == "man"){
+					for(var i = 0; i < table.length; i++) {
+						table[i].innerHTML = "";						
+					}
+					table[0].innerHTML = '<tr class="applicationList"><td>1</td><td>송강</td><td>950528</td><td value="man">남</td><td>컨설팅</td><td>jonjal@naver.com</td><td>지원자 송강 입니다</td></tr>';
+					table[1].innerHTML = '<tr class="applicationList"><td>2</td><td>남주혁</td><td>900503</td><td value="man">남</td><td>백앤드</td><td>wngur@naver.com</td><td>지원자 남주혁 입니다</td></tr>';
 				} else {
-					for(var i = 0; i < table.length; i++) {
-						table[i].innerHTML = "";						
-					}
-					table[1].innerHTML = "<tr class='applicationDetail'><td>1</td><td>송강</td><td>971007</td><td value='man'>남</td><td>컨설팅</td><td>jonjal@naver.com</td><td>지원자 송강 입니다</td></tr>";
-					table[2].innerHTML = "<tr class='applicationDetail'><td>2</td><td>남주혁</td><td>971007</td><td value='man'>남</td><td>백앤드</td><td>wngur@naver.com</td><td>지원자 남주혁 입니다</td></tr>";
+					location.reload();
 				}
 			});
-*/
 		});
-	
 	</script>
 </body>
 </html>
