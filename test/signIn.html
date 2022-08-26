@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  	
+  	<title>회원가입</title>
+</head>
+<style>
+	body {
+		padding: 15px;
+	}
+	
+	#title {
+		margin-right: 50px;
+	}
+	
+	section {
+		padding: 10px;	
+	}	
+	
+	.cont-area {
+		padding-right: 20px;
+		padding-top: 20px;
+	}
+	
+	.input-area {
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	.language {
+		height: fit-content;
+	}
+	
+	.left-area {
+		margin-right: 20px;
+		float: left;
+	}
+	
+	.right-area {
+		float : right;
+	}
+
+</style>
+<body>
+	<div id="wrap">
+		<header>
+			<div class="d-flex">
+				<div class="logo col-10 d-flex align-items-center">
+					<h1 id="title">KAIONEX</h1>
+					<span>ABC Management System</span>
+				</div>
+				<div class="profile-box col-1">
+					<span>
+						Tony Chang<br>
+						Administrator
+					</span>
+				</div>
+				<select class="form-select language" aria-label="Default select example">
+					<option selected>언어</option>
+					<option value="man">한국어</option>
+					<option value="woman">영어</option>
+				</select>
+			</div>
+			<nav class="navbar navbar-expand-lg bg-light">
+			  <div class="container-fluid">
+			    <a class="navbar-brand" href="#">Navbar</a>
+			    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			      <span class="navbar-toggler-icon"></span>
+			    </button>
+			    <div class="collapse navbar-collapse" id="navbarNav">
+			      <ul class="navbar-nav">
+			        <li class="nav-item">
+			          <a class="nav-link active" aria-current="page" href="#">회원관리</a>
+			        </li>
+			        <li class="nav-item">
+			          <a class="nav-link" href="#">서비스관리</a>
+			        </li>
+			        <li class="nav-item">
+			          <a class="nav-link" href="#">사이트관리</a>
+			        </li>
+			        <li class="nav-item">
+			          <a class="nav-link" href="#">로그관리</a>
+			        </li>
+			        <li class="nav-item">
+			          <a class="nav-link" href="#">시스템관리</a>
+			        </li>
+			        <li class="nav-item">
+			          <a class="nav-link" href="#">시스템관리</a>
+			        </li>
+			      </ul>
+			    </div>
+			  </div>
+			</nav>
+		</header>
+		<section>
+			<h3>Code</h3>
+			<div class="cont-area">
+				<div class="col-6">
+					<h5>아이디</h5>
+					<input type="text" class="form-control" placeholder="영문(대소문자),숫자,특수문자0, 4~10자리 조합">
+				</div>
+				<div class="input-area mt-3">
+					<div class="col-6 left-area">
+						<h5>비밀번호</h5>
+						<input type="password" class="form-control" placeholder="영문(대소문자),숫자,특수문자0, 8~20자리 조합">
+					</div>
+					<div class="col-6 right-area">
+						<h5>비밀번호 확인</h5>
+						<input type="password" class="form-control">
+					</div>
+				</div>
+				<div class="input-area mt-3">
+					<div class="col-6 left-area">
+						<h5>이름</h5>
+						<input type="text" class="form-control">
+					</div>
+					<div class="col-6">
+						<h5>이름 (영문)</h5>
+						<input type="text" class="form-control">
+					</div>
+				</div>
+				<div class="input-area mt-3">
+					<div class="col-6 left-area">
+						<h5>이름</h5>
+						<input type="text" class="form-control">
+					</div>
+					<div class="col-6">
+						<h5>성</h5>
+						<input type="text" class="form-control">
+					</div>
+				</div>
+				<div class="input-area mt-3">
+					<div class="col-6 left-area">
+						<h5>이름 (영문)</h5>
+						<input type="text" class="form-control">
+					</div>
+					<div class="col-6">
+						<h5>성 (영문)</h5>
+						<input type="text" class="form-control">
+					</div>
+				</div>
+				<div class="input-area mt-3">
+					<div class="col-6 left-area">
+						<h5>성별</h5>
+						<select class="form-select" aria-label="Default select example">
+							<option selected>:: 선택 ::</option>
+							<option value="man">남</option>
+							<option value="woman">여</option>
+						</select>
+					</div>
+					<div class="col-6">
+						<h5>생일</h5>
+						<input type="text" class="form-control">
+					</div>
+				</div>
+				<div class="input-area mt-3">
+					<div class="col-6 left-area">
+						<h5>email</h5>
+						<input type="text" class="form-control" placeholder="name@example.com">
+					</div>
+					<div class="col-6">
+						<h5>이메일 정보 마케팅 사용 동의</h5>
+						<input type="checkbox">동의합니다
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
